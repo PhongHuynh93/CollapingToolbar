@@ -5,12 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--    default is primary color-->
     <com.umbrella.myapplication.collapsingToolbar.CollapsibleAppbar
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent">
+        android:background="?attr/colorSurface">
 
         <com.umbrella.myapplication.collapsingToolbar.CollapsibleToolbar
             android:id="@+id/motionLayout"
@@ -20,17 +19,11 @@
             app:layoutDescription="@xml/motion_app_scene"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideLineToolbar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="?attr/actionBarSize" />
-
             <TextView
-                android:id="@+id/tvTitleLarge"
+                android:id="@+id/expandedTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
                 android:paddingHorizontal="@dimen/space_normal"
                 android:text="@string/archangel_title"
                 android:textAppearance="?attr/textAppearanceHeadline4"
@@ -38,20 +31,15 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/guideLineToolbar"
-                tools:text="@tools:sample/lorem" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/bgToolbar"
                 android:layout_width="wrap_content"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorSurface"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="?attr/actionBarSize" />
 
             <TextView
-                android:id="@+id/tvTitleSmall"
+                android:id="@+id/collapsedTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="?attr/actionBarSize"
                 android:fontFamily="sans-serif-medium"

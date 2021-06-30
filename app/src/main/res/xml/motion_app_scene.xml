@@ -8,7 +8,12 @@
             android:layout_height="?attr/actionBarSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@android:color/white" />
+        </Constraint>
 
     </ConstraintSet>
 
@@ -18,7 +23,12 @@
             android:layout_height="?attr/actionBarSize"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent">
+
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/light_gray" />
+        </Constraint>
     </ConstraintSet>
 
     <Transition
@@ -26,26 +36,25 @@
         app:constraintSetStart="@+id/start">
 
         <KeyFrameSet>
-            <!--            title-->
             <KeyAttribute
                 android:alpha="0"
                 app:framePosition="0"
-                app:motionTarget="@id/tvTitleSmall" />
+                app:motionTarget="@id/collapsedTitle" />
 
             <KeyAttribute
                 android:alpha="0"
                 app:framePosition="70"
-                app:motionTarget="@id/tvTitleSmall" />
+                app:motionTarget="@id/collapsedTitle" />
 
             <KeyAttribute
                 android:alpha="1"
                 app:framePosition="80"
-                app:motionTarget="@id/tvTitleSmall" />
+                app:motionTarget="@id/collapsedTitle" />
 
             <KeyAttribute
                 android:alpha="1"
                 app:framePosition="100"
-                app:motionTarget="@id/tvTitleSmall" />
+                app:motionTarget="@id/collapsedTitle" />
         </KeyFrameSet>
     </Transition>
 </MotionScene>
