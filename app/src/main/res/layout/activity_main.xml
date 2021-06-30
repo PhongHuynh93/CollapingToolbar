@@ -2,24 +2,22 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="?android:attr/colorBackground">
+    android:layout_height="match_parent">
 
-    <share.ui.CollapsibleAppbar
+    <!--    default is primary color-->
+    <com.umbrella.myapplication.collapsingToolbar.CollapsibleAppbar
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/transparent"
-        android:stateListAnimator="@null">
+        android:background="@android:color/transparent">
 
-        <share.ui.CollapsibleToolbar
+        <com.umbrella.myapplication.collapsingToolbar.CollapsibleToolbar
             android:id="@+id/motionLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
-            app:layoutDescription="@xml/fragment_installed_app_scene"
+            app:layoutDescription="@xml/motion_app_scene"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <androidx.constraintlayout.widget.Guideline
@@ -34,6 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/space_normal"
+                android:text="@string/archangel_title"
                 android:textAppearance="?attr/textAppearanceHeadline4"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textStyle="bold"
@@ -55,20 +54,29 @@
                 android:id="@+id/tvTitleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="?attr/actionBarSize"
-                android:alpha="0"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:textAppearance="?attr/toolbarTitle"
+                android:text="@string/archangel_title"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
                 app:layout_constraintBottom_toBottomOf="@+id/bgToolbar"
                 app:layout_constraintEnd_toEndOf="@+id/bgToolbar"
                 app:layout_constraintStart_toStartOf="@+id/bgToolbar"
                 app:layout_constraintTop_toTopOf="@+id/bgToolbar"
                 tools:text="@tools:sample/lorem" />
-        </share.ui.CollapsibleToolbar>
-    </share.ui.CollapsibleAppbar>
+        </com.umbrella.myapplication.collapsingToolbar.CollapsibleToolbar>
+    </com.umbrella.myapplication.collapsingToolbar.CollapsibleAppbar>
 
-    <FrameLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-    </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_normal"
+            android:text="@string/archangel_description"
+            android:textAppearance="?attr/textAppearanceBody1" />
+    </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

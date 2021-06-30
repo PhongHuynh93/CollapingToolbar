@@ -1,15 +1,14 @@
-package com.umbrella.myapplication
+package com.umbrella.myapplication.collapsingToolbar
 
 import android.content.Context
 import android.util.AttributeSet
 import com.google.android.material.appbar.AppBarLayout
-import com.kryptowire.matador.app_shared.R
-import share.util.getDimen
+import com.umbrella.myapplication.R
 
 class CollapsibleAppbar @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : AppBarLayout(context, attrs, defStyleAttr), AppBarLayout.OnOffsetChangedListener {
-    val toolbarElevation = getDimen(R.dimen.toolbar_elevation)
+    private val toolbarElevation = context.resources.getDimension(R.dimen.toolbar_elevation)
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
