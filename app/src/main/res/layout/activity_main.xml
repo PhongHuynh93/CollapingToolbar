@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <share.ui.CollapsibleAppbar
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:stateListAnimator="@null">
+
+        <share.ui.CollapsibleToolbar
+            android:id="@+id/motionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:layoutDescription="@xml/fragment_installed_app_scene"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="?attr/actionBarSize" />
+
+            <TextView
+                android:id="@+id/tvTitleLarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/space_normal"
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guideLineToolbar"
+                tools:text="@tools:sample/lorem" />
+
+            <View
+                android:id="@+id/bgToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:alpha="0"
+                android:gravity="center"
+                android:textAppearance="?attr/toolbarTitle"
+                app:layout_constraintBottom_toBottomOf="@+id/bgToolbar"
+                app:layout_constraintEnd_toEndOf="@+id/bgToolbar"
+                app:layout_constraintStart_toStartOf="@+id/bgToolbar"
+                app:layout_constraintTop_toTopOf="@+id/bgToolbar"
+                tools:text="@tools:sample/lorem" />
+        </share.ui.CollapsibleToolbar>
+    </share.ui.CollapsibleAppbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
